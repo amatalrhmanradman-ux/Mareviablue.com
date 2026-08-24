@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marévia Blue International — Global Seafood Excellence</title>
+<meta name="description" content="Marévia Blue International (MBI) — négoce international de produits de la mer. Poissons, crustacés, céphalopodes. Yémen · UE · EAU · Arabie Saoudite · Oman · Qatar · France.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0a2342;
+    --deep:#0d2f52;
+    --ink:#0e1b2c;
+    --teal:#0fa3a3;
+    --teal-deep:#0a7a7a;
+    --gold:#c69a4e;
+    --sand:#f6f3ec;
+    --pearl:#ffffff;
+    --line:rgba(10,35,66,0.12);
+    --shadow: 0 20px 50px -20px rgba(10,35,66,0.35);
+    --wave-h: 120px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter', sans-serif;
+    color:var(--ink);
+    background:var(--sand);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:0.72rem;
+    font-weight:700;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--teal-deep);
+  }
+  a{color:inherit;}
+  img,svg{display:block;}
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  @media(max-width:640px){ .container{padding:0 20px;} }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(10,35,66,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .nav-inner{
+    max-width:1180px; margin:0 auto; padding:16px 32px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  @media(max-width:640px){ .nav-inner{padding:14px 20px;} }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    color:var(--pearl); text-decoration:none;
+  }
+  .brand-mark{width:34px; height:34px; flex-shrink:0;}
+  .brand-text{line-height:1.05;}
+  .brand-text b{font-family:'Fraunces',serif; font-size:1.05rem; font-weight:600; display:block;}
+  .brand-text span{font-size:0.62rem; letter-spacing:0.16em; color:var(--teal); text-transform:uppercase;}
+  nav.links{display:flex; gap:28px; align-items:center;}
+  nav.links a{
+    color:rgba(255,255,255,0.78); text-decoration:none; font-size:0.86rem; font-weight:500;
+    transition:color .2s;
+  }
+  nav.links a:hover{color:var(--pearl);}
+  @media(max-width:860px){ nav.links{display:none;} }
+  .lang-toggle{
+    display:flex; background:rgba(255,255,255,0.08); border-radius:999px; padding:3px;
+    border:1px solid rgba(255,255,255,0.15);
+  }
+  .lang-toggle button{
+    border:none; background:transparent; color:rgba(255,255,255,0.6);
+    font-family:'Inter',sans-serif; font-size:0.76rem; font-weight:700; letter-spacing:0.04em;
+    padding:6px 14px; border-radius:999px; cursor:pointer; transition:all .2s;
+  }
+  .lang-toggle button.active{background:var(--teal); color:var(--navy);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg,var(--navy) 0%, var(--deep) 100%);
+    color:var(--pearl);
+    padding:150px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    position:absolute; inset:0; opacity:0.06;
+    background-image:
+      radial-gradient(circle at 1px 1px, var(--pearl) 1px, transparent 1px);
+    background-size:26px 26px;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center;
+    padding-bottom:70px;
+  }
+  @media(max-width:920px){ .hero-inner{grid-template-columns:1fr; text-align:left;} }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.1rem);
+    font-weight:600;
+    line-height:1.04;
+    margin:18px 0 22px;
+  }
+  .hero h1 em{font-style:normal; color:var(--teal);}
+  .hero p.lead{
+    font-size:1.08rem; color:rgba(255,255,255,0.72); max-width:480px; line-height:1.6; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:4px; font-weight:600; font-size:0.9rem;
+    text-decoration:none; cursor:pointer; border:1px solid transparent; transition:all .2s;
+  }
+  .btn-primary{background:var(--teal); color:var(--navy);}
+  .btn-primary:hover{background:#12c2c2;}
+  .btn-ghost{border-color:rgba(255,255,255,0.3); color:var(--pearl);}
+  .btn-ghost:hover{border-color:var(--pearl); background:rgba(255,255,255,0.06);}
+
+  .hero-badge{
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
+    border-radius:10px; padding:26px 26px 22px;
+    backdrop-filter:blur(6px);
+  }
+  .hero-badge .flag-row{display:flex; gap:0; margin-bottom:16px; flex-wrap:wrap;}
+  .flagchip{
+    font-size:0.68rem; font-weight:700; letter-spacing:0.03em;
+    color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.18);
+    padding:6px 10px; border-radius:999px; margin:0 6px 6px 0;
+  }
+  .hero-badge .stat-line{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid rgba(255,255,255,0.1);}
+  .hero-badge .stat-line:first-of-type{border-top:none;}
+  .hero-badge .stat-label{font-size:0.78rem; color:rgba(255,255,255,0.55);}
+  .hero-badge .stat-value{font-family:'Fraunces',serif; font-size:0.95rem; color:var(--teal); font-weight:600;}
+
+  /* wave divider — the signature trade-route motif */
+  .wave-wrap{position:relative; height:var(--wave-h); margin-top:20px;}
+  .wave-wrap svg{position:absolute; bottom:-1px; left:0; width:100%; height:100%;}
+  .route-dot{ fill:var(--gold); }
+  .route-line{ stroke:rgba(255,255,255,0.35); stroke-width:1.4; fill:none; stroke-dasharray:4 5;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  section{padding:96px 0;}
+  @media(max-width:640px){ section{padding:64px 0;} }
+  .sec-head{max-width:640px; margin-bottom:52px;}
+  .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.5rem); font-weight:600; margin-top:10px; line-height:1.15;}
+  .sec-head p{color:#4a5d75; margin-top:14px; font-size:1.02rem; line-height:1.6;}
+
+  /* ---------- GUARANTEE / ABOUT ---------- */
+  .about{background:var(--pearl);}
+  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;}
+  @media(max-width:860px){ .about-grid{grid-template-columns:1fr;} }
+  .promise-card{
+    background:var(--navy); color:var(--pearl); border-radius:6px; padding:38px;
+    position:relative; overflow:hidden;
+  }
+  .promise-card::before{
+    content:""; position:absolute; top:-40px; right:-40px; width:160px; height:160px;
+    border:1px solid rgba(255,255,255,0.12); border-radius:50%;
+  }
+  .promise-card h3{font-size:1.5rem; font-weight:600; margin-bottom:18px; position:relative;}
+  .promise-list{list-style:none; position:relative;}
+  .promise-list li{
+    display:flex; gap:14px; padding:14px 0; border-top:1px solid rgba(255,255,255,0.12);
+    font-size:0.95rem; color:rgba(255,255,255,0.85);
+  }
+  .promise-list li:first-child{border-top:none;}
+  .promise-list b{color:var(--teal); font-family:'Fraunces',serif; font-weight:600; min-width:26px;}
+  .about-copy p{color:#3c4d64; line-height:1.75; margin-bottom:16px; font-size:1.02rem;}
+  .about-copy p:last-child{margin-bottom:0;}
+
+  /* ---------- PRODUCTS ---------- */
+  .products{background:var(--sand);}
+  .cat-tabs{display:flex; gap:10px; margin-bottom:40px; flex-wrap:wrap;}
+  .cat-tab{
+    padding:9px 18px; border-radius:999px; border:1px solid var(--line); background:transparent;
+    font-family:'Inter',sans-serif; font-size:0.82rem; font-weight:600; color:#4a5d75; cursor:pointer;
+    transition:all .2s;
+  }
+  .cat-tab.active{background:var(--navy); border-color:var(--navy); color:var(--pearl);}
+  .product-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+  }
+  @media(max-width:940px){ .product-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:520px){ .product-grid{grid-template-columns:1fr;} }
+  .pcard{
+    background:var(--pearl); border:1px solid var(--line); border-radius:8px; padding:22px 18px 20px;
+    transition:transform .25s, box-shadow .25s; display:flex; flex-direction:column; align-items:flex-start;
+  }
+  .pcard:hover{transform:translateY(-4px); box-shadow:var(--shadow);}
+  .pcard .icon-wrap{
+    width:64px; height:64px; border-radius:50%; background:var(--sand);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px;
+  }
+  .pcard .icon-wrap img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+  .pcard .fr-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.03rem; margin-bottom:3px;}
+  .pcard .en-name{font-size:0.82rem; color:var(--teal-deep); font-weight:600; margin-bottom:3px;}
+  .pcard .sci-name{font-size:0.76rem; color:#8896a8; font-style:italic;}
+  .pcard.hidden{display:none;}
+
+  /* ---------- PROCESSING ---------- */
+  .processing{background:var(--navy); color:var(--pearl);}
+  .processing .sec-head p{color:rgba(255,255,255,0.62);}
+  .processing .eyebrow{color:var(--teal);}
+  .proc-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:16px;}
+  @media(max-width:940px){ .proc-grid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:560px){ .proc-grid{grid-template-columns:repeat(2,1fr);} }
+  .proc-card{
+    background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12);
+    border-radius:8px; padding:22px 14px; text-align:center;
+  }
+  .proc-card svg{width:38px; height:38px; margin:0 auto 14px; }
+  .proc-card .fr{font-weight:600; font-size:0.88rem; margin-bottom:2px;}
+  .proc-card .en{font-size:0.72rem; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em;}
+
+  /* ---------- NETWORK / FLAGS ---------- */
+  .network{background:var(--pearl);}
+  .network-strip{
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:28px 18px;
+    padding:36px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .nation{display:flex; flex-direction:column; align-items:center; gap:8px; min-width:74px;}
+  .nation .swatch{width:46px; height:32px; border-radius:3px; border:1px solid var(--line);}
+  .nation span{font-size:0.68rem; font-weight:700; color:#4a5d75; text-transform:uppercase; letter-spacing:0.04em;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--sand);}
+  .contact-grid{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:0; border-radius:10px; overflow:hidden; box-shadow:var(--shadow);
+  }
+  @media(max-width:860px){ .contact-grid{grid-template-columns:1fr;} }
+  .contact-left{background:var(--navy); color:var(--pearl); padding:52px 44px;}
+  .contact-left h3{font-size:1.7rem; font-weight:600; margin-bottom:14px;}
+  .contact-left p{color:rgba(255,255,255,0.65); line-height:1.7; margin-bottom:30px; max-width:400px;}
+  .contact-item{
+    display:flex; align-items:center; gap:14px; padding:14px 0; border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .contact-item:first-of-type{border-top:none;}
+  .contact-item .ic{
+    width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.08);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .contact-item .ic svg{width:18px; height:18px; stroke:var(--teal);}
+  .contact-item a{text-decoration:none; font-weight:600; font-size:0.95rem; color:var(--pearl);}
+  .contact-right{
+    background:var(--pearl); padding:52px 44px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .contact-right .eyebrow{margin-bottom:10px;}
+  .contact-right h4{font-family:'Fraunces',serif; font-size:1.3rem; font-weight:600; margin-bottom:18px;}
+  .contact-right p{color:#4a5d75; line-height:1.7; margin-bottom:26px; font-size:0.95rem;}
+
+  footer{
+    background:var(--ink); color:rgba(255,255,255,0.5); padding:32px 0; font-size:0.8rem;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+  footer b{color:rgba(255,255,255,0.8);}
+
+  [data-i18n]{}
+  html[data-lang="en"] [data-fr]{display:none;}
+  html[data-lang="fr"] [data-en]{display:none;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a class="brand" href="#top">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="23" stroke="#0fa3a3" stroke-width="1.4"/>
+        <path d="M10 27c4-6 10-9 14-9s10 3 14 9c-4 3-10 5-14 5s-10-2-14-5z" fill="#0fa3a3" opacity="0.85"/>
+        <circle cx="30" cy="23" r="1.6" fill="#0a2342"/>
+      </svg>
+      <span class="brand-text"><b>Marévia Blue</b><span>International</span></span>
+    </a>
+    <nav class="links">
+      <a href="#about" data-fr>La société</a><a href="#about" data-en>About</a>
+      <a href="#products" data-fr>Nos produits</a><a href="#products" data-en>Products</a>
+      <a href="#processing" data-fr>Conditionnement</a><a href="#processing" data-en>Processing</a>
+      <a href="#network" data-fr>Réseau</a><a href="#network" data-en>Network</a>
+      <a href="#contact" data-fr>Contact</a><a href="#contact" data-en>Contact</a>
+    </nav>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button id="btn-fr" class="active" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<div id="top"></div>
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow" data-fr>Société Marévia Blue International — MBI</span>
+      <span class="eyebrow" data-en>Marévia Blue International — MBI</span>
+      <h1 data-fr>Connecter les mers.<br>Livrer la <em>qualité</em>.</h1>
+      <h1 data-en>Connecting seas.<br>Delivering <em>quality</em>.</h1>
+      <p class="lead" data-fr>Négociant international de produits de la mer : poissons, crustacés et céphalopodes sélectionnés, conditionnés selon vos besoins et livrés depuis nos réseaux d'approvisionnement vers l'Europe et le Golfe.</p>
+      <p class="lead" data-en>International seafood trading house: carefully selected fish, crustaceans and cephalopods, processed to your specification and shipped from our sourcing network across Europe and the Gulf.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary"><span data-fr>Contactez-nous</span><span data-en>Get in touch</span></a>
+        <a href="#products" class="btn btn-ghost"><span data-fr>Voir les produits</span><span data-en>View products</span></a>
+      </div>
+    </div>
+    <div class="hero-badge">
+      <div class="flag-row">
+        <span class="flagchip">🇾🇪 Yemen</span>
+        <span class="flagchip">🇪🇺 EU</span>
+        <span class="flagchip">🇦🇪 UAE</span>
+        <span class="flagchip">🇸🇦 KSA</span>
+        <span class="flagchip">🇴🇲 Oman</span>
+        <span class="flagchip">🇶🇦 Qatar</span>
+        <span class="flagchip">🇫🇷 France</span>
+      </div>
+      <div class="stat-line"><span class="stat-label" data-fr>Espèces référencées</span><span class="stat-label" data-en>Species listed</span><span class="stat-value">18+</span></div>
+      <div class="stat-line"><span class="stat-label" data-fr>Formats de conditionnement</span><span class="stat-label" data-en>Processing formats</span><span class="stat-value">6</span></div>
+      <div class="stat-line"><span class="stat-label" data-fr>Pays du réseau</span><span class="stat-label" data-en>Network countries</span><span class="stat-value">7</span></div>
+    </div>
+  </div>
+  <div class="wave-wrap">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,70 C150,20 300,110 450,60 C600,10 750,100 900,55 C1000,25 1100,45 1200,30" class="route-line"/>
+      <circle class="route-dot" cx="60" cy="63" r="4"/>
+      <circle class="route-dot" cx="330" cy="82" r="4"/>
+      <circle class="route-dot" cx="600" cy="48" r="4"/>
+      <circle class="route-dot" cx="870" cy="70" r="4"/>
+      <circle class="route-dot" cx="1140" cy="34" r="4"/>
+      <path d="M0,120 L0,80 C150,40 300,120 450,70 C600,20 750,110 900,65 C1000,35 1100,55 1200,40 L1200,120 Z" fill="#f6f3ec"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ ABOUT / GUARANTEE ============ -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-copy">
+      <span class="eyebrow" data-fr>La société</span>
+      <span class="eyebrow" data-en>The company</span>
+      <h2 style="margin-top:10px; margin-bottom:22px; font-size:1.9rem; font-weight:600;">
+        <span data-fr>Un pont maritime entre nos zones de pêche et vos tables</span>
+        <span data-en>A maritime bridge between our fishing grounds and your table</span>
+      </h2>
+      <p data-fr>Marévia Blue International (MBI) sélectionne, traite et exporte une large gamme de produits de la mer — poissons pélagiques et de fond, crustacés et céphalopodes — issus de zones de pêche soigneusement suivies.</p>
+      <p data-fr>Notre réseau s'étend du Yémen à l'Union Européenne, en passant par les Émirats Arabes Unis, l'Arabie Saoudite, Oman, le Qatar et la France, garantissant une chaîne du froid maîtrisée à chaque étape.</p>
+      <p data-en>Marévia Blue International (MBI) sources, processes and exports a wide range of seafood — pelagic and demersal fish, crustaceans and cephalopods — from carefully monitored fishing grounds.</p>
+      <p data-en>Our network spans Yemen to the European Union, through the United Arab Emirates, Saudi Arabia, Oman, Qatar and France, with a controlled cold chain at every step.</p>
+    </div>
+    <div class="promise-card">
+      <h3><span data-fr>Notre engagement</span><span data-en>Our guarantee</span></h3>
+      <ul class="promise-list">
+        <li><b>01</b><span data-fr>Qualité contrôlée à chaque lot, de la mer au conditionnement.</span><span data-en>Controlled quality on every batch, from sea to packing.</span></li>
+        <li><b>02</b><span data-fr>Prix compétitifs grâce à un approvisionnement direct.</span><span data-en>Competitive pricing through direct sourcing.</span></li>
+        <li><b>03</b><span data-fr>Traçabilité complète et respect de la chaîne du froid.</span><span data-en>Full traceability and cold-chain integrity.</span></li>
+        <li><b>04</b><span data-fr>Conditionnement adapté aux besoins de chaque client.</span><span data-en>Processing tailored to each client's needs.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow" data-fr>Catalogue</span>
+      <span class="eyebrow" data-en>Catalogue</span>
+      <h2><span data-fr>Nos produits</span><span data-en>Our products</span></h2>
+      <p data-fr>Une sélection d'espèces pélagiques, de poissons de fond, de crustacés et de céphalopodes, disponibles selon saisonnalité et disponibilité des stocks.</p>
+      <p data-en>A selection of pelagic species, demersal fish, crustaceans and cephalopods, available according to season and stock availability.</p>
+    </div>
+
+    <div class="cat-tabs" id="cat-tabs">
+      <button class="cat-tab active" data-cat="all"><span data-fr>Tout</span><span data-en>All</span></button>
+      <button class="cat-tab" data-cat="fish"><span data-fr>Poissons</span><span data-en>Fish</span></button>
+      <button class="cat-tab" data-cat="shell"><span data-fr>Crustacés & céphalopodes</span><span data-en>Shellfish & cephalopods</span></button>
+    </div>
+
+    <div class="product-grid" id="product-grid">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESSING ============ -->
+<section class="processing" id="processing">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Custom Fit</span>
+      <h2><span data-fr>Un conditionnement adapté à vos besoins</span><span data-en>Processing built around your needs</span></h2>
+      <p data-fr>Du poisson entier au filet, chaque produit peut être préparé selon le format le plus adapté à votre marché.</p>
+      <p data-en>From whole round to fillet, every product can be prepared in the format best suited to your market.</p>
+    </div>
+    <div class="proc-grid" id="proc-grid"></div>
+  </div>
+</section>
+
+<!-- ============ NETWORK ============ -->
+<section class="network" id="network">
+  <div class="container">
+    <div class="sec-head" style="margin-bottom:0;">
+      <span class="eyebrow" data-fr>Réseau international</span>
+      <span class="eyebrow" data-en>International network</span>
+      <h2><span data-fr>Sept pays, une même exigence</span><span data-en>Seven countries, one standard</span></h2>
+    </div>
+    <div class="network-strip">
+      <div class="nation"><div class="swatch" style="background:linear-gradient(#000 33%,#fff 33%,#fff 66%,#ce1126 66%)"></div><span>Yemen</span></div>
+      <div class="nation"><div class="swatch" style="background:#003399"></div><span>EU</span></div>
+      <div class="nation"><div class="swatch" style="background:linear-gradient(#ce1126 25%,#000 25%,#000 50%,#fff 50%,#fff 75%,#009739 75%)"></div><span>UAE</span></div>
+      <div class="nation"><div class="swatch" style="background:#0b6623"></div><span>KSA</span></div>
+      <div class="nation"><div class="swatch" style="background:linear-gradient(#fff 33%,#ce1126 33%,#ce1126 66%,#008000 66%)"></div><span>Oman</span></div>
+      <div class="nation"><div class="swatch" style="background:#8a1538"></div><span>Qatar</span></div>
+      <div class="nation"><div class="swatch" style="background:linear-gradient(90deg,#0055a4 33%,#fff 33%,#fff 66%,#ef4135 66%)"></div><span>France</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <span class="eyebrow" style="color:var(--teal);" data-fr>Parlons-en</span>
+        <span class="eyebrow" style="color:var(--teal);" data-en>Let's talk</span>
+        <h3><span data-fr>Contactez-nous</span><span data-en>Get in touch</span></h3>
+        <p data-fr>Pour toute demande de devis, disponibilité ou partenariat, notre équipe commerciale vous répond rapidement.</p>
+        <p data-en>For quotes, availability or partnership enquiries, our sales team will get back to you promptly.</p>
+
+        <div class="contact-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <a href="tel:+33666344415">+33 (0)6 66 34 44 15</a>
+        </div>
+        <div class="contact-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <a href="tel:+33623347965">+33 (0)6 23 34 79 65</a>
+        </div>
+        <div class="contact-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></span>
+          <a href="mailto:sales@marevia-blue.com">sales@marevia-blue.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"/></svg></span>
+          <a href="https://www.marevia-blue.com" target="_blank" rel="noopener">www.marevia-blue.com</a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <span class="eyebrow" data-fr>Demande de devis</span>
+        <span class="eyebrow" data-en>Request a quote</span>
+        <h4><span data-fr>Un besoin précis ?</span><span data-en>Have a specific need?</span></h4>
+        <p data-fr>Indiquez-nous l'espèce, le format de conditionnement et le volume souhaité — nous revenons vers vous avec une offre adaptée.</p>
+        <p data-en>Tell us the species, processing format and volume you need — we'll come back with a tailored offer.</p>
+        <a class="btn btn-primary" style="background:var(--navy); color:#fff; align-self:flex-start;" href="mailto:sales@marevia-blue.com?subject=Demande%20de%20devis%20-%20Marevia%20Blue">
+          <span data-fr>Envoyer une demande</span><span data-en>Send a request</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; width:100%;">
+    <span><b>Marévia Blue International</b> — MBI · <span data-fr>Global Seafood Excellence</span><span data-en>Global Seafood Excellence</span></span>
+    <span>&copy; <span id="year"></span> Marévia Blue International</span>
+  </div>
+</footer>
+
+<script>
+/* ---------------- ICONS ---------------- */
+const ICONS = {
+  fish: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 32c8-14 22-20 32-20 8 0 14 4 18 9-3 6-3 9 0 15-4 5-10 9-18 9-10 0-24-6-32-13z" fill="var(--icon-color,#0fa3a3)"/>
+    <path d="M56 21c3 4 4 8 2 11 2 3 1 7-2 11" stroke="var(--icon-color,#0fa3a3)" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="20" cy="29" r="2.4" fill="#0a2342"/>
+    <path d="M10 32c-3 1-5 3-6 5 3 0 6-1 8-3" fill="var(--icon-color,#0fa3a3)" opacity="0.7"/>
+  </svg>`,
+  eel: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6 14c8 2 10 8 6 13s-8 8-4 13 12 6 10 12-8 8-4 13" stroke="var(--icon-color,#0fa3a3)" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <circle cx="8" cy="13" r="2.6" fill="#0a2342"/>
+  </svg>`,
+  shrimp: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M46 12c-10 0-20 8-24 20-2 6-8 10-14 10 4 4 12 4 16 0" stroke="var(--icon-color,#c69a4e)" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="47" cy="12" r="4" fill="var(--icon-color,#c69a4e)"/>
+    <path d="M50 8l4-4M50 16l5 2" stroke="var(--icon-color,#c69a4e)" stroke-width="2" stroke-linecap="round"/>
+  </svg>`,
+  lobster: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="34" cy="32" rx="20" ry="9" fill="var(--icon-color,#c69a4e)"/>
+    <path d="M14 32c-4-3-8-3-10-1M14 32c-4 3-8 3-10 1" stroke="var(--icon-color,#c69a4e)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M52 26l6-6M52 38l6 6" stroke="var(--icon-color,#c69a4e)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M20 22l-4-8M28 20l-2-9" stroke="var(--icon-color,#c69a4e)" stroke-width="2" stroke-linecap="round"/>
+  </svg>`,
+  crab: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="32" cy="34" rx="18" ry="12" fill="var(--icon-color,#c69a4e)"/>
+    <path d="M14 30l-8-6M50 30l8-6" stroke="var(--icon-color,#c69a4e)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M10 40l-6 4M54 40l6 4M14 46l-4 7M50 46l4 7M22 48l-2 8M42 48l2 8" stroke="var(--icon-color,#c69a4e)" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>`,
+  cuttlefish: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="32" cy="24" rx="15" ry="18" fill="var(--icon-color,#c69a4e)"/>
+    <path d="M20 40c-2 8-4 12-8 16M28 42c-1 8-2 12-3 16M36 42c1 8 2 12 3 16M44 40c2 8 4 12 8 16" stroke="var(--icon-color,#c69a4e)" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+  </svg>`,
+  octopus: `<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="22" r="16" fill="var(--icon-color,#c69a4e)"/>
+    <path d="M14 30c-3 8-6 10-10 18M20 34c-2 9-3 11-2 18M28 36c0 9 0 11 2 18M36 36c0 9 0 11-2 18M44 34c2 9 3 11 2 18M50 30c3 8 6 10 10 18" stroke="var(--icon-color,#c69a4e)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <circle cx="26" cy="20" r="1.8" fill="#0a2342"/><circle cx="38" cy="20" r="1.8" fill="#0a2342"/>
+  </svg>`
+};
+
+/* ---------------- PRODUCTS DATA ---------------- */
+const PRODUCTS = [
+  {cat:'fish', image:'assets/chinchard.jpg', fr:'Chinchard', en:'Horse Mackerel', sci:'Trachurus murphyi'},
+  {cat:'fish', image:'assets/selar-queue-jaune.jpg', fr:'Sélar Queue Jaune', en:'Yellowtail Scad', sci:'Atule mate'},
+  {cat:'fish', image:'assets/daurade.jpg', fr:'Daurade', en:'Sea Bream', sci:'Sparidae spp.'},
+  {cat:'fish', image:'assets/croaker-tigre.jpg', fr:'Croaker Tigre', en:'Tiger Croaker', sci:'Micropogonias undulatus'},
+  {cat:'fish', image:'assets/sauteur-cuir.jpg', fr:'Sauteur Cuir', en:'Leather Jacket', sci:'Oligoplites saurus'},
+  {cat:'fish', image:'assets/thazard-raye.jpg', fr:'Thazard Rayé', en:'King Fish', sci:'Scomberomorus commerson'},
+  {cat:'fish', image:'assets/sauteur-talang.jpg', fr:'Sauteur Talang', en:'Queenfish', sci:'Scomberoides commersonnianus'},
+  {cat:'fish', image:'assets/barracuda.jpg',  fr:'Barracuda (Bécune)', en:'Barracuda', sci:'Sphyraena sp.'},
+  {cat:'fish', image:'assets/thon-jaune.jpg', fr:'Thon Jaune', en:'Yellowfin Tuna', sci:'Thunnus albacares'},
+  {cat:'fish', image:'assets/auxide.jpg', fr:'Auxide', en:'Frigate Tuna', sci:'Auxis thazard'},
+  {cat:'fish', image:'assets/maquereau-blanc.jpg', fr:'Maquereau Blanc', en:'Chub Mackerel', sci:'Scomber japonicus'},
+  {cat:'fish', image:'assets/mulet.jpg',  fr:'Mulet', en:'Grey Mullet', sci:'Mugil cephalus'},
+  {cat:'fish', image:'assets/colas-fil-jobfish.jpg', fr:'Colas Fil / Jobfish', en:'Jobfish', sci:'Pristipomoides sp.'},
+  {cat:'fish', image:'assets/vivaneau-malabar.jpg', fr:'Vivaneau Malabar', en:'Red Snapper', sci:'Lutjanus malabaricus'},
+  {cat:'fish', image:'assets/poisson-lapin.jpg', fr:'Poisson Lapin', en:'Rabbit Fish', sci:'Siganus sp.'},
+  {cat:'fish', image:'assets/sabre.jpg',  fr:'Sabre', en:'Ribbon Fish', sci:'Trichiurus lepturus'},
+  {cat:'shell', image:'assets/crevette.jpg', fr:'Crevette', en:'Shrimp', sci:'Penaeus semisulcatus'},
+  {cat:'shell', image:'assets/langouste.jpg', fr:'Langouste', en:'Rock Lobster', sci:'Panulirus homarus'},
+  {cat:'shell', image:'assets/crabe.jpg', fr:'Crabe', en:'Crab', sci:'Portunus pelagicus'},
+  {cat:'shell', image:'assets/poulpe.jpg', fr:'Pieuvre (Poulpe)', en:'Octopus', sci:'Octopus vulgaris'},
+  {cat:'shell', image:'assets/seiche-pharaon.jpg', fr:'Seiche Pharaon', en:'Cuttlefish', sci:'Sepia pharaonis'},
+  {cat:'shell', image:'assets/calmar-indien.jpg', fr:'Calmar Indien', en:'Indian Squid', sci:'Loligo duvauceli'},
+];
+
+const grid = document.getElementById('product-grid');
+PRODUCTS.forEach(p=>{
+  const el = document.createElement('div');
+  el.className = 'pcard';
+  el.dataset.cat = p.cat;
+  const color = p.cat === 'fish' ? '#0fa3a3' : '#c69a4e';
+  el.innerHTML = `
+    <div class="icon-wrap"><img src="${p.image}" alt="${p.fr}" loading="lazy"></div>
+    <div class="fr-name" data-fr>${p.fr}</div>
+    <div class="fr-name" data-en>${p.en}</div>
+    <div class="en-name" data-fr>${p.en}</div>
+    <div class="en-name" data-en>${p.fr}</div>
+    <div class="sci-name">${p.sci}</div>
+  `;
+  grid.appendChild(el);
+});
+
+document.querySelectorAll('.cat-tab').forEach(tab=>{
+  tab.addEventListener('click', ()=>{
+    document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    document.querySelectorAll('.pcard').forEach(card=>{
+      card.classList.toggle('hidden', cat!=='all' && card.dataset.cat!==cat);
+    });
+  });
+});
+
+/* ---------------- PROCESSING DATA ---------------- */
+const PROC = [
+  {fr:'Poisson entier', en:'Whole round', icon:`<path d="M6 22c6-8 16-13 22-13 6 0 10 3 13 6-2 4-2 6 0 10-3 4-7 6-13 6-9 0-16-4-22-9z" fill="none" stroke="#0fa3a3" stroke-width="2"/>`},
+  {fr:'Écaillé', en:'Scaled', icon:`<path d="M6 22c6-8 16-13 22-13 6 0 10 3 13 6-2 4-2 6 0 10-3 4-7 6-13 6-9 0-16-4-22-9z" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M12 15l3 3M17 12l3 4M22 11l2 4" stroke="#c69a4e" stroke-width="1.6"/>`},
+  {fr:'Découpé', en:'Cutted', icon:`<path d="M6 22c6-8 16-13 22-13 6 0 10 3 13 6-2 4-2 6 0 10-3 4-7 6-13 6-9 0-16-4-22-9z" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M14 10v24M22 8v28M30 10v24" stroke="#c69a4e" stroke-width="1.4"/>`},
+  {fr:'Filets', en:'Fillets', icon:`<path d="M8 14c4-2 20-4 26 0 2 1 2 3 0 4-6 4-22 2-26 0-2-1-2-3 0-4z" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M8 24c4-2 20-4 26 0 2 1 2 3 0 4-6 4-22 2-26 0-2-1-2-3 0-4z" fill="none" stroke="#0fa3a3" stroke-width="2"/>`},
+  {fr:'Conditionné', en:'Packing', icon:`<rect x="7" y="12" width="24" height="18" rx="1" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M7 17h24" stroke="#0fa3a3" stroke-width="1.4"/><path d="M22 6l4 3-4 3" fill="none" stroke="#c69a4e" stroke-width="1.6"/>`},
+  {fr:'Autres options', en:'Etc.', icon:`<circle cx="10" cy="20" r="2.4" fill="#0fa3a3"/><circle cx="19" cy="20" r="2.4" fill="#0fa3a3"/><circle cx="28" cy="20" r="2.4" fill="#0fa3a3"/>`},
+];
+const procGrid = document.getElementById('proc-grid');
+PROC.forEach(p=>{
+  const el = document.createElement('div');
+  el.className='proc-card';
+  el.innerHTML = `<svg viewBox="0 0 38 38">${p.icon}</svg>
+    <div class="fr" data-fr>${p.fr}</div><div class="fr" data-en>${p.en}</div>
+    <div class="en" data-fr>${p.en}</div><div class="en" data-en>${p.fr}</div>`;
+  procGrid.appendChild(el);
+});
+
+/* ---------------- LANG TOGGLE ---------------- */
+function setLang(lang){
+  document.documentElement.setAttribute('data-lang', lang);
+  document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
+  document.getElementById('btn-en').classList.toggle('active', lang==='en');
+  localStorage && localStorage.setItem('mbi-lang', lang);
+}
+(function(){
+  const saved = (window.localStorage && localStorage.getItem('mbi-lang'));
+  if(saved) setLang(saved);
+})();
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
