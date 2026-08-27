@@ -286,7 +286,13 @@
     background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.12);
     border-radius:8px; padding:22px 14px; text-align:center;
   }
-  .proc-card svg{width:38px; height:38px; margin:0 auto 14px; }
+.proc-card .proc-image{
+  width:110px;
+  height:80px;
+  object-fit:cover;
+  border-radius:8px;
+  margin:0 auto 16px;
+}
   .proc-card .fr{font-weight:600; font-size:0.88rem; margin-bottom:2px;}
   .proc-card .en{font-size:0.72rem; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em;}
 
@@ -762,23 +768,55 @@ document.querySelectorAll('.cat-tab').forEach(tab=>{
 
 /* ---------------- PROCESSING DATA ---------------- */
 const PROC = [
-  {fr:'Poisson entier', en:'Whole round', icon:`<path d="M6 22c6-8 16-13 22-13 6 0 10 3 13 6-2 4-2 6 0 10-3 4-7 6-13 6-9 0-16-4-22-9z" fill="none" stroke="#0fa3a3" stroke-width="2"/>`},
-  {fr:'Écaillé', en:'Scaled', icon:`<path d="M6 22c6-8 16-13 22-13 6 0 10 3 13 6-2 4-2 6 0 10-3 4-7 6-13 6-9 0-16-4-22-9z" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M12 15l3 3M17 12l3 4M22 11l2 4" stroke="#c69a4e" stroke-width="1.6"/>`},
-  {fr:'Découpé', en:'Cutted', icon:`<path d="M6 22c6-8 16-13 22-13 6 0 10 3 13 6-2 4-2 6 0 10-3 4-7 6-13 6-9 0-16-4-22-9z" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M14 10v24M22 8v28M30 10v24" stroke="#c69a4e" stroke-width="1.4"/>`},
-  {fr:'Filets', en:'Fillets', icon:`<path d="M8 14c4-2 20-4 26 0 2 1 2 3 0 4-6 4-22 2-26 0-2-1-2-3 0-4z" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M8 24c4-2 20-4 26 0 2 1 2 3 0 4-6 4-22 2-26 0-2-1-2-3 0-4z" fill="none" stroke="#0fa3a3" stroke-width="2"/>`},
-  {fr:'Conditionné', en:'Packing', icon:`<rect x="7" y="12" width="24" height="18" rx="1" fill="none" stroke="#0fa3a3" stroke-width="2"/><path d="M7 17h24" stroke="#0fa3a3" stroke-width="1.4"/><path d="M22 6l4 3-4 3" fill="none" stroke="#c69a4e" stroke-width="1.6"/>`},
-  {fr:'Autres options', en:'Etc.', icon:`<circle cx="10" cy="20" r="2.4" fill="#0fa3a3"/><circle cx="19" cy="20" r="2.4" fill="#0fa3a3"/><circle cx="28" cy="20" r="2.4" fill="#0fa3a3"/>`},
+  {
+    fr:'Poisson entier',
+    en:'Whole round',
+    image:'assets/poisson-entier.jpg'
+  },
+  {
+    fr:'Écaillé',
+    en:'Scaled',
+    image:'assets/ecaille.jpg'
+  },
+  {
+    fr:'Découpé',
+    en:'Cut',
+    image:'assets/decoupe.jpg'
+  },
+  {
+    fr:'Filets',
+    en:'Fillets',
+    image:'assets/filets.jpg'
+  },
+  {
+    fr:'Conditionné',
+    en:'Packing',
+    image:'assets/conditionne.jpg'
+  },
+  {
+    fr:'Autres options',
+    en:'Other options',
+    image:'assets/autres.jpg'
+  }
 ];
 const procGrid = document.getElementById('proc-grid');
+
 PROC.forEach(p=>{
   const el = document.createElement('div');
   el.className='proc-card';
-  el.innerHTML = `<svg viewBox="0 0 38 38">${p.icon}</svg>
-    <div class="fr" data-fr>${p.fr}</div><div class="fr" data-en>${p.en}</div>
-    <div class="en" data-fr>${p.en}</div><div class="en" data-en>${p.fr}</div>`;
+
+  el.innerHTML = `
+    <img class="proc-image" src="${p.image}" alt="${p.fr}" loading="lazy">
+
+    <div class="fr" data-fr>${p.fr}</div>
+    <div class="fr" data-en>${p.en}</div>
+
+    <div class="en" data-fr>${p.en}</div>
+    <div class="en" data-en>${p.fr}</div>
+  `;
+
   procGrid.appendChild(el);
 });
-
 /* ---------------- LANG TOGGLE ---------------- */
 function setLang(lang){
   document.documentElement.setAttribute('data-lang', lang);
