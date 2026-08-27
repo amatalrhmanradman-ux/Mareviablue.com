@@ -9,19 +9,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --navy:#0a2342;
-    --deep:#0d2f52;
-    --ink:#0e1b2c;
-    --teal:#0fa3a3;
-    --teal-deep:#0a7a7a;
-    --gold:#c69a4e;
-    --sand:#f6f3ec;
-    --pearl:#ffffff;
-    --line:rgba(10,35,66,0.12);
-    --shadow: 0 20px 50px -20px rgba(10,35,66,0.35);
-    --wave-h: 120px;
-  }
+:root{
+  --navy:#063B5C;
+  --deep:#075477;
+  --ink:#102A3A;
+
+  --teal:#19A7B5;
+  --teal-deep:#087EA4;
+
+  --sky:#6EC6E8;
+  --sky-light:#EAF7FB;
+
+  --gold:#C8A45D;
+
+  --sand:#F3FAFC;
+  --pearl:#FFFFFF;
+
+  --line:rgba(6,59,92,0.12);
+
+  --shadow:0 20px 50px -20px rgba(6,59,92,0.25);
+
+  --wave-h:120px;
+}
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
@@ -60,7 +69,7 @@
   right:0;
   z-index:100;
   background:#ffffff;
-  border-bottom:1px solid rgba(10,35,66,0.12);
+  border-bottom:1px solid rgba(6,59,92,0.12);
 }
  .nav-inner{
   max-width:1180px;
@@ -94,7 +103,7 @@ nav.links a{
 }
 
 nav.links a:hover{
-  color:var(--teal-deep);
+  color:#087EA4;
 }
   @media(max-width:860px){ nav.links{display:none;} }
 .lang-toggle{
@@ -127,7 +136,12 @@ nav.links a:hover{
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    background:linear-gradient(180deg,var(--navy) 0%, var(--deep) 100%);
+background:linear-gradient(
+  135deg,
+  #063B5C 0%,
+  #075477 55%,
+  #087EA4 100%
+);
     color:var(--pearl);
     padding:210px 0 0;
     overflow:hidden;
@@ -160,10 +174,25 @@ nav.links a:hover{
     padding:14px 26px; border-radius:4px; font-weight:600; font-size:0.9rem;
     text-decoration:none; cursor:pointer; border:1px solid transparent; transition:all .2s;
   }
-  .btn-primary{background:var(--teal); color:var(--navy);}
-  .btn-primary:hover{background:#12c2c2;}
-  .btn-ghost{border-color:rgba(255,255,255,0.3); color:var(--pearl);}
-  .btn-ghost:hover{border-color:var(--pearl); background:rgba(255,255,255,0.06);}
+  .btn-primary{
+  background:#6EC6E8;
+  color:#063B5C;
+  font-weight:700;
+}
+
+.btn-primary:hover{
+  background:#FFFFFF;
+  color:#063B5C;
+}
+ .btn-ghost{
+  border-color:rgba(255,255,255,0.5);
+  color:#FFFFFF;
+}
+
+.btn-ghost:hover{
+  border-color:#6EC6E8;
+  background:rgba(110,198,232,0.12);
+}
 
   .hero-badge{
     background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14);
@@ -305,14 +334,14 @@ nav.links a:hover{
   .pcard .icon-wrap img {width: 120%; height: 120%;object-fit: contain;object-position: center;border-radius: 50%;display: block;}
   
   .pcard .fr-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.03rem; margin-bottom:3px;}
-  .pcard .en-name{font-size:0.82rem; color:var(--teal-deep); font-weight:600; margin-bottom:3px;}
+  .pcard .en-name{font-size:0.82rem; color:#087EA4; font-weight:600; margin-bottom:3px;}
   .pcard .sci-name{font-size:0.76rem; color:#8896a8; font-style:italic;}
   .pcard.hidden{display:none;}
 
   /* ---------- PROCESSING ---------- */
-  .processing{background:var(--navy); color:var(--pearl);}
+  .processing{background:#063B5C; color:#FFFFFF;}
   .processing .sec-head p{color:rgba(255,255,255,0.62);}
-  .processing .eyebrow{color:var(--teal);}
+  .processing .eyebrow{color:#6EC6E8;}
   .proc-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:16px;}
   @media(max-width:940px){ .proc-grid{grid-template-columns:repeat(3,1fr);} }
   @media(max-width:560px){ .proc-grid{grid-template-columns:repeat(2,1fr);} }
@@ -329,7 +358,7 @@ nav.links a:hover{
   border-radius:8px;
 }
   .proc-card .fr{font-weight:600; font-size:0.88rem; margin-bottom:2px;}
-  .proc-card .en{font-size:0.72rem; color:var(--teal); text-transform:uppercase; letter-spacing:0.06em;}
+  .proc-card .en{font-size:0.72rem; color:#6EC6E8; text-transform:uppercase; letter-spacing:0.06em;}
 
   /* ---------- NETWORK / FLAGS ---------- */
   .network{background:var(--pearl);}
@@ -716,7 +745,7 @@ PRODUCTS.forEach(p=>{
   const el = document.createElement('div');
   el.className = 'pcard';
   el.dataset.cat = p.cat;
-  const color = p.cat === 'fish' ? '#0fa3a3' : '#c69a4e';
+  const color = p.cat === 'fish' ? '#087EA4' : '#19A7B5';
   el.innerHTML = `
     <div class="icon-wrap"><img src="${p.image}" alt="${p.fr}" loading="lazy"></div>
     <div class="fr-name" data-fr>${p.fr}</div>
