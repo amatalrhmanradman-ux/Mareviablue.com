@@ -137,11 +137,26 @@
     backdrop-filter:blur(6px);
   }
   .hero-badge .flag-row{display:flex; gap:0; margin-bottom:16px; flex-wrap:wrap;}
-  .flagchip{
-    font-size:0.68rem; font-weight:700; letter-spacing:0.03em;
-    color:rgba(255,255,255,0.55); border:1px solid rgba(255,255,255,0.18);
-    padding:6px 10px; border-radius:999px; margin:0 6px 6px 0;
-  }
+.flagchip{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  font-size:0.68rem;
+  font-weight:700;
+  letter-spacing:0.03em;
+  color:rgba(255,255,255,0.55);
+  border:1px solid rgba(255,255,255,0.18);
+  padding:6px 10px;
+  border-radius:999px;
+  margin:0 6px 6px 0;
+}
+
+.flagchip img{
+  width:22px;
+  height:15px;
+  object-fit:cover;
+  border-radius:2px;
+}
   .hero-badge .stat-line{display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid rgba(255,255,255,0.1);}
   .hero-badge .stat-line:first-of-type{border-top:none;}
   .hero-badge .stat-label{font-size:0.78rem; color:rgba(255,255,255,0.55);}
@@ -283,6 +298,13 @@
   }
   .nation{display:flex; flex-direction:column; align-items:center; gap:8px; min-width:74px;}
   .nation .swatch{width:46px; height:32px; border-radius:3px; border:1px solid var(--line);}
+  .country-flag{
+  width:46px;
+  height:32px;
+  object-fit:cover;
+  border-radius:3px;
+  border:1px solid var(--line);
+}
   .nation span{font-size:0.68rem; font-weight:700; color:#4a5d75; text-transform:uppercase; letter-spacing:0.04em;}
 
   /* ---------- CONTACT ---------- */
@@ -362,13 +384,33 @@
     </div>
     <div class="hero-badge">
       <div class="flag-row">
-        <span class="flagchip">🇾🇪 Yemen</span>
-        <span class="flagchip">🇪🇺 EU</span>
-        <span class="flagchip">🇦🇪 UAE</span>
-        <span class="flagchip">🇸🇦 KSA</span>
-        <span class="flagchip">🇴🇲 Oman</span>
-        <span class="flagchip">🇶🇦 Qatar</span>
-        <span class="flagchip">🇫🇷 France</span>
+       <span class="flagchip">
+  <img src="assets/yemen.png" alt="Yemen"> Yemen
+</span>
+
+<span class="flagchip">
+  <img src="assets/eu.png" alt="European Union"> EU
+</span>
+
+<span class="flagchip">
+  <img src="assets/uae.png" alt="United Arab Emirates"> UAE
+</span>
+
+<span class="flagchip">
+  <img src="assets/saudi-arabia.png" alt="Saudi Arabia"> KSA
+</span>
+
+<span class="flagchip">
+  <img src="assets/oman.png" alt="Oman"> Oman
+</span>
+
+<span class="flagchip">
+  <img src="assets/qatar.png" alt="Qatar"> Qatar
+</span>
+
+<span class="flagchip">
+  <img src="assets/france.png" alt="France"> France
+</span>
       </div>
       <div class="stat-line"><span class="stat-label" data-fr>Espèces référencées</span><span class="stat-label" data-en>Species listed</span><span class="stat-value">18+</span></div>
       <div class="stat-line"><span class="stat-label" data-fr>Formats de conditionnement</span><span class="stat-label" data-en>Processing formats</span><span class="stat-value">6</span></div>
@@ -472,13 +514,44 @@
       <h2><span data-fr>Sept pays, une même exigence</span><span data-en>Seven countries, one standard</span></h2>
     </div>
     <div class="network-strip">
-      <div class="nation"><div class="swatch" style="background:linear-gradient(#000 33%,#fff 33%,#fff 66%,#ce1126 66%)"></div><span>Yemen</span></div>
-      <div class="nation"><div class="swatch" style="background:#003399"></div><span>EU</span></div>
-      <div class="nation"><div class="swatch" style="background:linear-gradient(#ce1126 25%,#000 25%,#000 50%,#fff 50%,#fff 75%,#009739 75%)"></div><span>UAE</span></div>
-      <div class="nation"><div class="swatch" style="background:#0b6623"></div><span>KSA</span></div>
-      <div class="nation"><div class="swatch" style="background:linear-gradient(#fff 33%,#ce1126 33%,#ce1126 66%,#008000 66%)"></div><span>Oman</span></div>
-      <div class="nation"><div class="swatch" style="background:#8a1538"></div><span>Qatar</span></div>
-      <div class="nation"><div class="swatch" style="background:linear-gradient(90deg,#0055a4 33%,#fff 33%,#fff 66%,#ef4135 66%)"></div><span>France</span></div>
+  <div class="network-strip">
+
+  <div class="nation">
+    <img class="country-flag" src="assets/yemen.png" alt="Yemen">
+    <span>Yemen</span>
+  </div>
+
+  <div class="nation">
+    <img class="country-flag" src="assets/eu.png" alt="European Union">
+    <span>EU</span>
+  </div>
+
+  <div class="nation">
+    <img class="country-flag" src="assets/uae.png" alt="United Arab Emirates">
+    <span>UAE</span>
+  </div>
+
+  <div class="nation">
+    <img class="country-flag" src="assets/saudi-arabia.png" alt="Saudi Arabia">
+    <span>KSA</span>
+  </div>
+
+  <div class="nation">
+    <img class="country-flag" src="assets/oman.png" alt="Oman">
+    <span>Oman</span>
+  </div>
+
+  <div class="nation">
+    <img class="country-flag" src="assets/qatar.png" alt="Qatar">
+    <span>Qatar</span>
+  </div>
+
+  <div class="nation">
+    <img class="country-flag" src="assets/france.png" alt="France">
+    <span>France</span>
+  </div>
+
+</div>
     </div>
   </div>
 </section>
