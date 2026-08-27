@@ -192,11 +192,59 @@
     transition:all .2s;
   }
   .cat-tab.active{background:var(--navy); border-color:var(--navy); color:var(--pearl);}
-  .product-grid{
-    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
-  }
-  @media(max-width:940px){ .product-grid{grid-template-columns:repeat(2,1fr);} }
-  @media(max-width:520px){ .product-grid{grid-template-columns:1fr;} }
+ .product-carousel{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+}
+
+.product-grid{
+  display:flex;
+  gap:18px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  padding:10px 5px 20px;
+}
+
+.product-grid::-webkit-scrollbar{
+  display:none;
+}
+
+.product-grid .pcard{
+  flex:0 0 250px;
+}
+
+.carousel-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;
+  height:44px;
+  border:none;
+  border-radius:50%;
+  background:var(--navy);
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.2);
+}
+
+.carousel-btn:hover{
+  background:var(--teal);
+}
+
+.carousel-prev{
+  left:5px;
+}
+
+.carousel-next{
+  right:5px;
+}
   .pcard{
     background:var(--pearl); border:1px solid var(--line); border-radius:8px; padding:22px 18px 20px;
     transition:transform .25s, box-shadow .25s; display:flex; flex-direction:column; align-items:center; text-align:center;
@@ -384,9 +432,21 @@
       <button class="cat-tab" data-cat="shell"><span data-fr>Crustacés & céphalopodes</span><span data-en>Shellfish & cephalopods</span></button>
     </div>
 
-    <div class="product-grid" id="product-grid">
-      <!-- filled by JS -->
-    </div>
+   <div class="product-carousel">
+
+  <button class="carousel-btn carousel-prev" id="carousel-prev">
+    ‹
+  </button>
+
+  <div class="product-grid" id="product-grid">
+    <!-- filled by JS -->
+  </div>
+
+  <button class="carousel-btn carousel-next" id="carousel-next">
+    ›
+  </button>
+
+</div>
   </div>
 </section>
 
@@ -554,7 +614,68 @@ PRODUCTS.forEach(p=>{
   `;
   grid.appendChild(el);
 });
+  
+/* ---------------- PRODUCT CAROUSEL ---------------- */
 
+const productGrid = document.getElementById('product-grid');
+const prevBtn = document.getElementById('carousel-prev');
+const nextBtn = document.getElementById('carousel-next');
+
+const scrollAmount = 286;
+
+nextBtn.addEventListener('click', () => {
+  productGrid.scrollBy({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+});
+
+prevBtn.addEventListener('click', () => {
+  productGrid.scrollBy({
+    left: -scrollAmount,
+    behavior: 'smooth'
+  });
+});
+
+/* Défilement automatique */
+let autoScroll = setInterval(() => {
+
+  if (productGrid.scrollLeft + productGrid.clientWidth >= productGrid.scrollWidth - 5) {
+    productGrid.scrollTo({
+      left: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    productGrid.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }
+
+}, 3000);
+
+/* Pause lorsque la souris est dessus */
+productGrid.addEventListener('mouseenter', () => {
+  clearInterval(autoScroll);
+});
+
+productGrid.addEventListener('mouseleave', () => {
+  autoScroll = setInterval(() => {
+
+    if (productGrid.scrollLeft + productGrid.clientWidth >= productGrid.scrollWidth - 5) {
+      productGrid.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      productGrid.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+
+  }, 3000);
+});
 document.querySelectorAll('.cat-tab').forEach(tab=>{
   tab.addEventListener('click', ()=>{
     document.querySelectorAll('.cat-tab').forEach(t=>t.classList.remove('active'));
